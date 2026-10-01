@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+    <ion-input label="ID" placeholder="Enter Student ID"></ion-input>
+    <ion-input type="Password" label="Password" placeholder="Enter Password"></ion-input><br>
+  
+    <!-- <ion-title class="title">Favorite Subject:</ion-title>
+    <ion-radio-group value="databases">
+      <ion-radio  value="programming">Programming</ion-radio><br />
+      <ion-radio value="databases">Databases</ion-radio><br />
+      <ion-radio value="mobile_apps">Mobile Apps</ion-radio>
+    </ion-radio-group> -->
+
+    <ion-select value="databases" label="Favorite Subject" placeholder="Favorite Subject">
+      <ion-select-option value="programming">Programming</ion-select-option>
+      <ion-select-option value="databases">Databases</ion-select-option>
+      <ion-select-option value="mobile_apps">Mobile Apps</ion-select-option>
+    </ion-select>
+
+    <br>
+
+    <ion-button  fill="outline" shape="round" routerLink="/event-details">Open Events</ion-button>
+
+
+
+</ion-content>
