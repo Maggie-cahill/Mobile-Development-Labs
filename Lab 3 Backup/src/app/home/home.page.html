@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class = "ion-padding">
+  <div id="container">
+    <h1>Hello {{name}}</h1>
+    <ion-button [disabled] = disabled>Press Me</ion-button><br>
+    
+    <ion-button (click) = "alertButton1()" id = "buttons"  (ionFocus)="focusButton1()" (mouseenter)="Button1Enter()">Button 1</ion-button><br>
+    <ion-button (click) = alertButton2() id = "buttons" (ionFocus)="focusButton2()" (mouseenter)="Button2Enter()">Button 2</ion-button>
+
+    <br><br>
+
+    <div class = "ion-padding">
+      <h1>Hello {{name}}</h1>
+      <ion-input label = "Enter name: " [(ngModel)]="name"></ion-input>
+    </div>
+
+    <br><br>
+
+    <div class = "ion-padding">
+      <h1>Incrememnt Button</h1>
+      <h2>{{ startNumber }}</h2>
+      @if(maxNumber > startNumber ) {
+        <ion-button (click)="incrementNumber()">+1</ion-button>
+      }
+
+      @if(startNumber > minNumber ) {
+      <ion-button (click)="decrementNumber()">-1</ion-button>
+      }
+    </div>
+
+    <br><br>
+
+    <div>
+      <h1>Product List</h1>
+      @for (product of products; track product.name) {
+        <ion-item (click)="alertProduct(product)">{{ product.name }}</ion-item>
+      } @empty {
+        <li>There are no items.</li>
+      }
+    </div>
+  </div>
+
+</ion-content>
