@@ -1,0 +1,31 @@
+
+
+
+  <ion-header [translucent] = "true">
+    <ion-toolbar>
+      <ion-title size="large">Student Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class = "ion-padding">
+    <h2>Student Details Page</h2>
+    <ion-list>
+      <ion-item>ID: {{ selectedStudent.sid }}</ion-item>
+      <ion-item>Name: {{ selectedStudent.name }}</ion-item>
+      <ion-item>Programme: {{ selectedStudent.programme }}</ion-item>
+      <ion-item>Registered: {{ selectedStudent.registered }}</ion-item>
+      <ion-item>Grades:</ion-item>
+      <ion-item>
+        
+        <ul>
+          @for (g of selectedStudent.grades; track g) {
+            <li>{{g}} </li>
+          }
+        </ul>
+      </ion-item>
+     
+    </ion-list>
+
+  <ion-button (click)="close()">Back</ion-button>
+    
+</ion-content>
